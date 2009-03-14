@@ -1,0 +1,83 @@
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lX11 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -liconv -lICE -lXpm -lXt -lX11  -lm -lncurses  -liconv        
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lX11 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -liconv -lXpm -lXt -lX11  -lm -lncurses  -liconv        
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lX11 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXpm -lXt -lX11  -lm -lncurses  -liconv        
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lX11 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXpm -lXt -lX11  -lm -lncurses  
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lX11 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXpm -lX11  -lm -lncurses  
+objects/os_unix.o(.text+0x2661): In function `clear_xterm_clip':
+: undefined reference to `XtDestroyWidget'
+objects/os_unix.o(.text+0x269d): In function `xterm_update':
+: undefined reference to `XtDispatchEvent'
+objects/os_unix.o(.text+0x26ae): In function `xterm_update':
+: undefined reference to `XtAppPending'
+objects/os_unix.o(.text+0x26cd): In function `xterm_update':
+: undefined reference to `XtAppNextEvent'
+objects/os_unix.o(.text+0x2831): In function `setup_term_clip':
+: undefined reference to `applicationShellWidgetClass'
+objects/os_unix.o(.text+0x2840): In function `setup_term_clip':
+: undefined reference to `XtVaAppCreateShell'
+objects/os_unix.o(.text+0x2857): In function `setup_term_clip':
+: undefined reference to `XtStrings'
+objects/os_unix.o(.text+0x285e): In function `setup_term_clip':
+: undefined reference to `XtStrings'
+objects/os_unix.o(.text+0x2865): In function `setup_term_clip':
+: undefined reference to `XtStrings'
+objects/os_unix.o(.text+0x286c): In function `setup_term_clip':
+: undefined reference to `topLevelShellWidgetClass'
+objects/os_unix.o(.text+0x2876): In function `setup_term_clip':
+: undefined reference to `XtVaCreatePopupShell'
+objects/os_unix.o(.text+0x28b9): In function `setup_term_clip':
+: undefined reference to `XtRealizeWidget'
+objects/os_unix.o(.text+0x294b): In function `setup_term_clip':
+: undefined reference to `XtOpenDisplay'
+objects/os_unix.o(.text+0x2a7a): In function `xsmp_handle_interaction':
+: undefined reference to `SmcInteractDone'
+objects/os_unix.o(.text+0x2aa3): In function `xsmp_handle_interaction':
+: undefined reference to `SmcSaveYourselfDone'
+objects/os_unix.o(.text+0x2b2b): In function `xsmp_handle_save_yourself':
+: undefined reference to `SmcSaveYourselfDone'
+objects/os_unix.o(.text+0x2b4b): In function `xsmp_handle_save_yourself':
+: undefined reference to `SmcSaveYourselfDone'
+objects/os_unix.o(.text+0x2bb9): In function `xsmp_shutdown_cancelled':
+: undefined reference to `SmcSaveYourselfDone'
+objects/os_unix.o(.text+0x2bf1): In function `xsmp_ice_connection':
+: undefined reference to `IceConnectionNumber'
+objects/os_unix.o(.text+0x2c91): In function `xsmp_init':
+: undefined reference to `IceAddConnectionWatch'
+objects/os_unix.o(.text+0x2cdb): In function `xsmp_init':
+: undefined reference to `SmcOpenConnection'
+objects/os_unix.o(.text+0x2d16): In function `xsmp_init':
+: undefined reference to `SmcGetIceConnection'
+objects/os_unix.o(.text+0x2d3f): In function `xsmp_close':
+: undefined reference to `SmcCloseConnection'
+objects/os_unix.o(.text+0x2d93): In function `xsmp_handle_requests':
+: undefined reference to `IceProcessMessages'
+objects/os_unix.o(.text+0x2b73): In function `xsmp_handle_save_yourself':
+: undefined reference to `SmcInteractRequest'
+objects/os_unix.o(.text+0x2c0d): In function `xsmp_ice_connection':
+: undefined reference to `IceRemoveConnectionWatch'
+objects/ui.o(.text+0x2011): In function `open_app_context':
+: undefined reference to `XtToolkitInitialize'
+objects/ui.o(.text+0x2016): In function `open_app_context':
+: undefined reference to `XtCreateApplicationContext'
+objects/ui.o(.text+0x2188): In function `clip_x11_request_selection_cb':
+: undefined reference to `XtFree'
+objects/ui.o(.text+0x233c): In function `clip_x11_request_selection':
+: undefined reference to `XtGetSelectionValue'
+objects/ui.o(.text+0x2380): In function `clip_x11_request_selection':
+: undefined reference to `XtDispatchEvent'
+objects/ui.o(.text+0x2395): In function `clip_x11_request_selection':
+: undefined reference to `XtDispatchEvent'
+objects/ui.o(.text+0x24de): In function `clip_x11_convert_selection_cb':
+: undefined reference to `XtMalloc'
+objects/ui.o(.text+0x256e): In function `clip_x11_convert_selection_cb':
+: undefined reference to `XtMalloc'
+objects/ui.o(.text+0x2677): In function `clip_x11_convert_selection_cb':
+: undefined reference to `XtFree'
+objects/ui.o(.text+0x2756): In function `clip_x11_lose_selection':
+: undefined reference to `XtDisownSelection'
+objects/ui.o(.text+0x277a): In function `clip_x11_own_selection':
+: undefined reference to `XtOwnSelection'
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lX11 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXt -lX11  -lm -lncurses  
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXt -lX11  -lm -lncurses  
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lm -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXt -lm -lncurses  
+  gcc -L/usr/local/lib  -L/usr/local/lib  -o vim objects/buffer.o  objects/charset.o  objects/diff.o  objects/digraph.o  objects/edit.o  objects/eval.o  objects/ex_cmds.o  objects/ex_cmds2.o  objects/ex_docmd.o  objects/ex_eval.o  objects/ex_getln.o  objects/fileio.o  objects/fold.o  objects/getchar.o  objects/hardcopy.o  objects/hashtab.o    objects/if_cscope.o  objects/if_xcmdsrv.o  objects/main.o  objects/mark.o  objects/memfile.o  objects/memline.o  objects/menu.o  objects/message.o  objects/misc1.o  objects/misc2.o  objects/move.o  objects/mbyte.o  objects/normal.o  objects/ops.o  objects/option.o  objects/os_unix.o  objects/pathdef.o  objects/popupmnu.o  objects/quickfix.o  objects/regexp.o  objects/screen.o  objects/search.o  objects/spell.o  objects/syntax.o    objects/tag.o  objects/term.o  objects/ui.o  objects/undo.o  objects/window.o  objects/gui.o objects/gui_gtk.o objects/gui_gtk_x11.o  objects/pty.o objects/gui_gtk_f.o  objects/gui_beval.o                objects/netbeans.o   objects/version.o   -pthread -Wl,--rpath -Wl,/usr/local/lib -L/usr/local/lib -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lcairo -lpangoft2-1.0 -lfontconfig -lfreetype -lz -lpango-1.0 -lXfixes -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXt -lm -lncurses  

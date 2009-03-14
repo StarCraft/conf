@@ -1,0 +1,44 @@
+安装nginx
+        #cd /usr/ports/www/nginx
+        #make install clean
+        #rehash
+        #nginx #直接启动nginx 可以通过IP访问，显示"Welcome to nginx!"说明启动成功。
+        #echo 'nginx_enable="YES"' >> /etc/rc.conf
+安装ruby
+        #cd /usr/ports/lang/ruby18
+		#make deinstall
+        #cd/usr/ports/converters/ruby-iconv
+        #make install clean
+安装mongrel,如果已经安装了gem,并且gem不是最新版本，
+        可以到/usr/ports/devel/ruby-gems里deinstall
+		如果没有安装gem，则直接安装mongrel_cluster
+        #cd /usr/ports/www/rubygem-mongrel_cluster
+		#make install clean
+        #rehash
+		#gem list
+		#mkdir /usr/local/etc/mongrel_cluster
+		#echo 'mongrel_cluster_enable="YES"' >> /etc/rc.conf
+安装postgresql
+        # cd /usr/ports/databases/postgresql83-server
+	    # make install clean
+        #su pgsql
+        $initdb -D /usr/local/pgsql/data -E utf8
+        # echo 'postgresql_enable="YES"' >> /etc/rc.conf
+		#cd /usr/ports/databases/pgadmin3
+		#make install clean
+安装ImageMagick,如果在桌面环境中，需先退出桌面
+        # cd /usr/ports/graphics/ImageMagick
+        # make install clean
+        # rehash
+        # convert --version
+查看并安装其他gem包
+		#gem install rails postgres-pr rmagick
+配置mongrel
+		#cd app1
+		#mongrel_rails cluster::configure -c /home/Flag/app1 -e production -a 127.0.0.1 -p 7000 -N 3 -u mongrel_user -p mongrel_group
+		#mongrel_rails cluster:: start  restart stop
+		#cd app2
+		#mongrel_rails cluster::configure -c /home/Flag/app2 -e production -a 127.0.0.1 -p 8000 -N 3 -u mongrel_user -p mongrel_group
+		#mongrel_rails cluster:: start  restart stop
+		#ln -svf /home/Flag/app1/config/mongrel_cluster.yml /usr/local/etc/mongrel_cluster/test1.yml
+		#ln -svf /home/Flag/app2/config/mongrel_cluster.yml /usr/local/etc/mongrel_cluster/test2.yml

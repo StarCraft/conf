@@ -1,0 +1,270 @@
+freebsd安装手记
+一，USB键盘鼠标问题：
+启动的时候在beastie那里输入6，然后对Ok回答：
+set hint.atkbd.0.flags="0x1"
+boot
+如果碰到
+panic y/n? [y] panic: bye-bye
+cpuid = 0
+则：
+unload
+set currdev=disk0s1a:
+boot
+安装完成后，在/boot/loader.conf里面加入：
+hint.atkbd.0.flags="0x1"
+ 
+ 
+二，服务器安装 
+1,选择最小安装，选择定制，选择man,ports
+2,配置网络
+		#vi /etc/rc.conf
+			hostname="www.rorforge.org"
+			defaultrouter="192.168.2.1"
+			或者是，根据机器的不同,首先运行命令 ifconfig ，查看网卡的名字是什么
+			ifconfig_rl0="inet 192.168.2.11 netmask 255.255.255.0"
+			ifconfig_em0="inet 192.168.2.11 netmask 255.255.255.0"
+		#vi /etc/resolv.conf
+			nameserver 202.102.134.68
+		重启，可以上网
+3,更新包管理器
+		#portsnap fetch extract
+		#vi /etc/make.conf
+		#############################################################
+		MASTER_SITE_BACKUP?=\
+		ftp://ftp.freebsd.org.cn/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/\
+		http://ports.cn.freebsd.org/${DIST_SUBDIR}/
+		MASTER_SITE_OVERRIDE?=${MASTER_SITE_BACKUP}
+		############################################################
+三，FreeBSD+桌面
+1,选择最小安装，选择定制，选择man,ports
+2,从光盘安装桌面
+		sysinstall选择configure->packages->CD->all->Xorg
+		#Xorg -configure
+		#Xorg -config xorg.conf.new
+		如果鼠标不动，可能是因为鼠标键盘都为USB的缘故，将下面代码加入xorg.conf.new即可
+		Section "ServerFlags"
+			Option "AllowEmptyInput" "False"
+			Option "AutoAddDevices" "False"
+		EndSection
+		#cp xorg.conf.new /etc/X11/xorg.conf
+		sysinstall选择configure->packages->CD->all->Gnome
+		%echo "/usr/local/bin/gnome-session" > ~/.xinitrc
+		Gnome本身支持中文环境，只要编辑配置文件即可,根据你的shell选择cshrc或shrc
+		$vi ~/.cshrc
+		setenv LANG zh_CN.UTF-8
+		setenv LC_LANG zh_CN.UTF-8
+3,安装中文输入法
+        #cd /usr/ports/chinese/fcitx
+		#make install clean
+		装完以后，需要设置cshrc文件，设置一下
+		$vi ~/.cshrc
+		setenv XMODIFERS  @im=fcitx
+		最后一步，设置fcitx随startx启动,在/usr/local/bin/gnome-session的上面加上一行
+		$vi ~/.xinitrc
+		exec fcitx &
+4,安装git
+		#cd /usr/ports/devel/git
+		#make install clean
+5,改善字体
+		准备simsun.ttc
+		#mkdir /usr/local/lib/X11/fonts/TrueType
+		#cp simsun.ttc /usr/local/lib/X11/fonts/TrueType
+		#vi /etc/X11/xorg.conf
+		添加 FontPath "/usr/local/lib/X11/fonts/TrueType"
+		删除其他 FontPath
+		#fc-cache -f -v
+		至此，freebsd桌面调好，输入法中文，字体合格
+6,安装vim
+		#git clone git://github.com/Flag/configures.git
+		#cd vim72/src
+		#make
+		#make install
+		$cp configures/vim ~/.vim
+		$cp configures/vimrc ~/.vimrc
+四，DeskTopBSD桌面
+其他的参看FreeBSD设置，涉及中文的部分，参考下面
+		#vi /usr/local/share/config/kdm/Xsession
+		将其中大default更改为如下
+		  default)
+			LANGUAGE=zh_CN.UTF-8
+			LANG=zh_CN.UTF-8
+			LC_ALL=zh_CN.UTF-8
+			KDE_LANG=zh_CN.UTF-8
+			XMODIFIERS=@im=fcitx
+			export LANG LC_ALL KDE_LANG XMODIFIERS
+			export LANG LC_ALL XMODIFIERS
+			fcitx &
+			exec /usr/local/bin/startkde
+			;;
+		  *)
+			eval exec "$session"
+			;;
+安装git
+		#pkg_info |less   如果perl的版本低于5.8.9，则要删了重装
+		#cd /usr/ports/lang/perl5.8
+		#make deinstall
+		#cd /usr/ports/devel/git
+		#make install clean
+
+
+
+
+
+pw usershow -a
+pw userdel apple
+pw groupshow -a
+pw groupdel applegroup
+rmuser username
+
+FreeBSD开机启动的日志是：
+#dmesg -a |more
+
+
+
+在freebsd上使用github管理项目
+在github上创建项目的过程。
+如果没有.ssh文件夹，则执行下面命令
+$ssh-keygen -t rsa 按3个回车，采用默认设置
+进入~/.ssh文件夹，复制 id_rsa.pub文件里面的内容。注册时使用。
+2.进入github，注册，填上你的copy的ssh.
+ 
+git log
+git status
+git grep "xxxx"
+git tag v2.43 //给这个commit起了一个简单的名字v2.43
+git-whatchanged -p master..bobworks
+///////提交你的项目
+git init
+git add .
+git commit -m '介绍'
+///////给自己起别名，这个别名是内定的哦
+git remote add origin git@github.com:Flag/test.git
+git push origin master
+///////给为你提交源的成员起别名，方面使用
+git remote add apple git://.git
+git remote add xuchao git://.git
+//////为你的成员分别建立分支
+git branch apple
+git branch xuch
+//////如果要导入成员的成果，先进入分支，再拉成员的分支
+git checkout apple
+git pull apple myror
+///////如果对他的成果满意，就进入到master里合并
+git checkout master
+git merge apple
+////////如果有冲突，就打开个新的窗口编辑那些文件吧，注意，编辑完了要用git commit -m ""来提交更改哦
+//////一切OK，就提交吧，提交到哪里了呢？内定的别名啊，哈哈
+git push
+ 
+1. git remote 的常有参数的简介
+    git remote add <name> <url> 给远程的 source（资源项目） 起别名
+         例如：git remote add origin git://github.com/flag/jok.git
+    git remote rm <name> 删除 别名
+    git remote show <name> 显示 每个别名中的信息
+    git remote prune <name> （未知）
+    git remote update [group] 更新信息
+    -v, --verbose 查看所有详情（查看name 对应的 
+1. git clone git://github.com/account_name/project_name 将远程项目克隆到自己的项目下
+2. git remote add origin git@github.com:account_name/project_name 给自己私有的克隆地址起一个别名（默认情况下规定为:origin)
+3. git checkout -b apple_works 在当前项目里新建一个分支叫：apple_works，并进入。。
+4. 添加一个文件之后就要用命令：git add 文件名，然后再git commit 一下。但如果你只是删除一个文件，就只要git commit 一下就好了。
+=======
+1. git remote 的常有参数的简介
+    git remote add <name> <url> 给远程的 source（资源项目） 起别名
+         例如：git remote add origin git://github.com/flag/jok.git
+    git remote rm <name> 删除 别名
+    git remote show <name> 显示 每个别名中的信息
+    git remote prune <name> （未知）
+    git remote update [group] 更新信息
+    -v, --verbose 查看所有详情（查看name 对应的 url）
+ 
+2.git
+   add . 添加所有文件到索引
+   add 文件名 添加指定文件到索引
+   branch 查看当前分支List, create, or delete branches
+   show-branch 显示所有分支
+   branch my_branch_name 新建自己的分支
+
+
+
+
+
+
+
+
+rake db:sessions:create
+config/environment.rb
+confit.action_controller.seesion_store= :active_record_store
+ApplicationController
+protect_from_forgery :secret => 'f92decc3388dbb79fd1272de8be71b92'
+
+要扩展你的REST路由，可以通过设置map.resource的:collection，:member或者:new选项来实现：
+map.resources :projects, :collection => {:rss => 'get'}
+map.resources :projects, :member => {:close => 'post'}
+map.resources :projects, :new => {:validate => 'post'}
+:collection 扩展针对资源集合（collection）的路由，它指向一个形如 #{action} => #{method}的Hash，其中method可以是get/post/put/delete，而action就是你要扩展的方法，产生的路由为 /projects/rss（Edge Rails，Rails1.2.3为/projects;rss），因此GET /projects/rss将被影射到ProjectsController#rss，同时还有一个URL Helper：rss_projects_path。
+:member同:collection类似，不过它扩展针对单个资源的路由，因此它产生的路由为/projects/1/close（Edge Rails，Rails1.2.3为/projects/1;close），它也有一个URL Helper：close_project_path。
+:new也差不多，不过它针对的是那些已创建但尚未被保存的资源。
+
+
+
+
+
+
+
+
+
+
+
+
+postgresql安装注意事项
+在pgsql-#的提示下，分两种命令格式，以"/"引导开头的是postgresql的管理命令，再一种就是SQL语句。
+/? 显示第一种类型的帮助说明。
+/h 显示SQL语言的语句列表
+/h show 显示某条语句的说明和语法
+ 
+/l 列所有数据库
+/dt 显示当前数据库中表的信息，与mysql 中show table等同
+/c <database name> 连接另外一库
+/du 显示用户列表
+/! 回到shell下执行操作，exit返回
+/q 退出psql
+
+
+
+
+
+
+
+
+
+
+Rails下面的快捷键。vim下的rails开发，有一个rails.vim就够了.
+必备命令
+:ls
+:b 数字
+:Exp 打开当前文件所在的目录
+:ctrl+w hjll 在窗口中跳转
+gf 跳转到类文件
+ 
+:Rails 生成rails程序
+:Rgen 对应generate命令
+:Rdestroy
+:Rconsole
+:Rserver! 强制关闭其他相同端口的服务，并启动服务
+:Rextract 漂亮的命令
+:Rabbrev 列出所有rails所写。非常好的功能，提高写命令的效率60%  
+:Rabbrev {abbr} {expn} [{extra}]  添加一个快捷键，如：”Rabbrev :a :action\ =>\  “  
+:Rabbrev! {abbr}  Remove an abbreviation. 删除一个快捷键
+:Rspec            |rails-:Rspec|
+:Rmodel         |rails-:Rmodel|
+:Rmigration          |rails-:Rmigration|
+:Robserver          |rails-:Robserver|
+:Rfixtures          |rails-:Rfixtures|
+:Runittest          |rails-:Runittest|
+ 
+:Rcontroller          |rails-:Rcontroller|
+:Rhelper          |rails-:Rhelper|
+:Rview            |rails-:Rview|
+:Rlayout          |rails-:Rlayout|
+:Rfunctionaltest        |rails-:Rfunctionaltest|
